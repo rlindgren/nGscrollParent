@@ -6,7 +6,7 @@
     "Ryan Lindgren <ryan.lindgren@gmail.com>"
   ],
   "description": "angular.element plugin for jQueryUI scrollParent",
-  "main": "scrollParent.js",
+  "main": "angular.element.scrollParent.js",
   "keywords": [
     "scrollParent",
     "AngularJS",
