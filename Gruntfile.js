@@ -1,3 +1,7 @@
+
+var srcFile = 'scrollParent.js';
+var srcFileMin = 'scrollParent.min.js';
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -8,8 +12,9 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: '<%= pkg.name %>.js',
-        dest: '<%= pkg.name %>.min.js'
+        files: {
+          'scrollParent.min.js': [srcFile]
+        }
       }
     },
     bump: {
@@ -18,7 +23,7 @@ module.exports = function(grunt) {
         updateConfigs: ['pkg'],
         commit: true,
         commitMessage: 'Release v%VERSION%',
-        commitFiles: ['package.json'],
+        commitFiles: ['package.json', srcFile, srcFileMin],
         createTag: true,
         tagName: 'v%VERSION%',
         tagMessage: 'Version %VERSION%',
@@ -36,6 +41,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
 
-  grunt.registerTask('bump', ['uglify', 'bump'])
+  grunt.registerTask('bump', ['bump-only', 'default', 'bump-commit']);
 
 };
