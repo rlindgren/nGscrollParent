@@ -1,0 +1,24 @@
+{
+  "name": "angular.element.scrollParent",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tathata/angular.element.scrollParent",
+  "authors": [
+    "Ryan Lindgren <ryan.lindgren@gmail.com>"
+  ],
+  "description": "angular.element plugin for jQueryUI scrollParent",
+  "main": "scrollParent.js",
+  "keywords": [
+    "scrollParent",
+    "AngularJS",
+    "plugin",
+    "jQueryUI"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
