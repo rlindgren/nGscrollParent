@@ -1,6 +1,6 @@
 {
   "name": "nGscrollParent",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "angular.element plugin for jQueryUI scrollParent",
   "main": "src/scrollParent.js",
   "scripts": {
