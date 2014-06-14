@@ -1,6 +1,7 @@
 
-var srcFile = 'scrollParent.js';
-var srcFileMin = 'scrollParent.min.js';
+var srcFile = 'src/scrollParent.js';
+var srcFileMin = 'src/scrollParent.min.js';
+var distFile = 'dist/scrollParent.js';
 
 module.exports = function(grunt) {
 
@@ -13,8 +14,13 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'scrollParent.min.js': [srcFile]
+          'dist/scrollParent.min.js': [srcFile]
         }
+      }
+    },
+    copy: {
+      main: {
+        files: [{ expand: true, flatten: true, src: [srcFile], dest: 'dist/'}]
       }
     },
     bump: {
@@ -36,10 +42,11 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-bump');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['uglify', 'copy:main']);
 
   grunt.registerTask('bump', ['bump-only', 'default', 'bump-commit']);
 
