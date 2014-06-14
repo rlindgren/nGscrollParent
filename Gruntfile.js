@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         tagName: 'v%VERSION%',
         tagMessage: 'Version %VERSION%',
         push: true,
-        pushTo: 'upstream',
+        pushTo: 'origin',
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
       }
     }
@@ -48,6 +48,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['uglify', 'copy:main']);
 
-  grunt.registerTask('bump', ['bump-only', 'default', 'bump-commit']);
+  grunt.registerTask('bumper', ['bump-only', 'default', 'bump-commit']);
 
 };
