@@ -38,7 +38,7 @@
           return (/(auto|scroll)/).test( parent.css( 'overflow' ) + parent.css( 'overflow-y' ) + parent.css( 'overflow-x' ) );
         }).eq( 0 );
 
-      return position === 'fixed' || !scrollParent.length ? element( 'body' ) : scrollParent;
+      return (position === 'fixed' || !scrollParent.length) ? element( 'body' ) : scrollParent;
     },
     scrollParents: function () {
       var result = [];
