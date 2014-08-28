@@ -2,7 +2,7 @@
   'use strict';
   // jQueryUI Core scrollParent
   // http://jqueryui.com
-  if (!jQuery) {
+  if (typeof jQuery === 'undefined') {
     element.fn.extend({
       parents: function (){
         var result = [];
@@ -57,4 +57,4 @@
       return element(result);
     }
   });
-}(angular.element, jQuery));
+}(window.angular.element, window.jQuery));
